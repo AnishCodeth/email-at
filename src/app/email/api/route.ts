@@ -9,6 +9,7 @@ type mailOptionsType = {
   to: string;
   subject: string;
   html: string;
+  text:string
 };
 
 export async function POST(request: NextRequest) {
