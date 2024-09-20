@@ -1,8 +1,8 @@
-import dotenv from "dotenv";
+
 import { NextRequest, NextResponse } from "next/server";  // Use NextResponse instead of Response
 import { emailConfig } from "./emailconfig";
 
-dotenv.config();
+
 
 type mailOptionsType = {
   from: string;
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
 
 
 
-    mailOptions.html = `<div><p>${mailOptions.text}</p><img src="http://192.168.1.67:3001/public/image.png"/></div>`;
+    mailOptions.html = `<div><p>${mailOptions.text}</p><img src="${process.env.DOMAIN}/public/image.png"/></div>`;
 
     console.log(mailOptions);
 
